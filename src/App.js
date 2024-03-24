@@ -1,10 +1,12 @@
 import {useState, useEffect} from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route, Link, useParams } from 'react-router-dom';
+import Homepage from './Homepage';
+import Stats from './Stats';
 
 function App() {
 
-	let [desc, setDesc] = useState("");
+	let [news, setNews] = useState([]);
 
 	useEffect(() => {
 		
@@ -16,7 +18,7 @@ function App() {
 				throw new Error("Failed to fetch API Call");
 			})
 			.then(data => {
-				setDesc(data.current.weather[0].description);
+				//set the news
 			})
 			.catch(error => {
 				console.log(error);
@@ -25,10 +27,28 @@ function App() {
 
 
   return (
-    <div className="App">
-      <header className='App-header'>
-
+    <div className="container">
+      <header>
+		<h1>Header</h1>
       </header>
+
+	  <BrowserRouter>
+		<nav>
+			<Link to="/">Home</Link> | {" "}
+			<Link to="/Stats">Stats</Link>
+		</nav>
+		
+		<section>
+			<Routes>
+			<Route path="/" element={<Homepage />} />
+			<Route path="/Stats" element={<Stats />} />
+			</Routes>
+		</section>
+	  </BrowserRouter>
+
+	  <footer>
+		<p>Copyright</p>
+	  </footer>
     </div>
   );
 }
