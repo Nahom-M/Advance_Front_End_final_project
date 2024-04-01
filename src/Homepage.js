@@ -1,7 +1,11 @@
-const Homepage = () =>{
+const Homepage = (props) =>{
     return(
         <div>
-            Hello
+            <ul>
+                {props.list && props.list.map(item => (
+                    <li key={item.id}>{item.title}</li>
+                ))}
+		    </ul>
         </div>
     );
 }

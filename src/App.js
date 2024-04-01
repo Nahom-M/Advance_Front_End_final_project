@@ -1,12 +1,13 @@
 import {useState, useEffect} from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route, Link, useParams } from 'react-router-dom';
+//useParams
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Homepage from './Homepage';
 import Stats from './Stats';
 
 function App() {
 
-	let [news, setNews] = useState([]);
+	const [list, setList] = useState([]);
 
 	useEffect(() => {
 		
@@ -18,7 +19,7 @@ function App() {
 				throw new Error("Failed to fetch API Call");
 			})
 			.then(data => {
-				//set the news
+				setList(data.results);
 			})
 			.catch(error => {
 				console.log(error);
@@ -40,7 +41,7 @@ function App() {
 		
 		<section>
 			<Routes>
-			<Route path="/" element={<Homepage />} />
+			<Route path="/" element={<Homepage list={list}/>} />
 			<Route path="/Stats" element={<Stats />} />
 			</Routes>
 		</section>
