@@ -6,7 +6,7 @@ const Homepage = (props) =>{
             <h3>All Books</h3>
             <ul>
                 {props.books && props.books.map(item => (
-                    <li key={item.id}>{item.title}</li>
+                    <li key={item.id}>Title: {item.title}, Rank: {item.rank}</li>
                 ))}
 		    </ul>
         </div>
