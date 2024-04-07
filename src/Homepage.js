@@ -1,8 +1,11 @@
+//import React, { useState } from 'react';
+
 const Homepage = (props) =>{
     return(
         <div>
+            <h3>All Books</h3>
             <ul>
-                {props.list && props.list.map(item => (
+                {props.books && props.books.map(item => (
                     <li key={item.id}>{item.title}</li>
                 ))}
 		    </ul>

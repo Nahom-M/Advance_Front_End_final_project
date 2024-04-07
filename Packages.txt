@@ -8,3 +8,31 @@ npm install react-bootstrap bootstrap@5.1.3
 
 Sass (may use)
 npm install sass
+
+
+Functionalities
+Search - We want to allow the user to search for any book based on their title or their author.
+The search feature will display the link, image, book and title of any book the user has
+searched for. We would accomplish this by utilizing the event handling that we learned. We
+will do this by giving the user an input field and letting them submit via a button.
+*Message if list is empty
+
+Rankings - We will offer the user the ability to view book rankings to see the top trending
+books. This will be done by using state lifting in order to pass it to the child component, then
+we would map through the list of ranks.
+*Rank by rankings (original may be top rated already)
+
+Book List - The user will be able to save a book they like and it will display itself in a list. The
+user may also have the option to remove any book they no longer wish to keep on the list.
+This will require us to use event handling to allow the user to change which books they
+would like to add to their list. The list itself will be stored in a separate state variable as well.
+
+Sorting/Filter - For this feature we want to let the user modify their book list in a few different
+ways. For example you could sort alphabetically or according to each book's respective
+ranking. We would also implement composition to help style the list.
+
+Purchase - For this feature we want to give the user the option to buy the book of their
+choice. To do this we plan on implementing this feature by giving the user a link to the
+appropriate website of the chosen book. In the API we are using every book has a few links
+on where you can buy each book, and so we plan on incorporating this into our website
+using this data.
