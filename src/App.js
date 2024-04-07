@@ -17,7 +17,7 @@ function App() {
 		//fetch("https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=lkA5enon02EGDcxWlr2SGKtvGYIg4COI")
 		//books
 		fetch("https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=lkA5enon02EGDcxWlr2SGKtvGYIg4COI")
-		//book reviews
+		//book reviewsas
 		//fetch("https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=lkA5enon02EGDcxWlr2SGKtvGYIg4COI")
 		.then(response => {
 			if(response.ok) 
@@ -26,7 +26,7 @@ function App() {
 				throw new Error("Failed to fetch API Call");
 			})
 			.then(data => {
-				setBooks(data.results);
+				setBooks(data.results.books);
 			})
 			.catch(error => {
 				console.log(error);
