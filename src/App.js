@@ -10,10 +10,6 @@ function App() {
 	const [list, setList] = useState([]);
 
 	useEffect(() => {
-		
-		//Most popular
-		//fetch("https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=lkA5enon02EGDcxWlr2SGKtvGYIg4COI")
-		//books
 		fetch("https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=lkA5enon02EGDcxWlr2SGKtvGYIg4COI")
 		//book reviews
 		//fetch("https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=lkA5enon02EGDcxWlr2SGKtvGYIg4COI")
