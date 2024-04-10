@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Homepage from './Homepage';
 import Search from './Search';
-import List from './List';
+import BookList from './BookList';
 import SortingComponent from './Rankings';
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
 			<Link to="/">Home</Link> | {" "}
 			<Link to="Search">Search</Link> | {" "}
 			<Link to="Rankings">Rankings</Link> | {" "}
-			<Link to="List">List</Link>
+			<Link to="BookList">BookList</Link>
 		</nav>
 		
 		<section>
@@ -53,7 +53,7 @@ function App() {
 				<Route path="/" element={<Homepage books={books}/>} />
 				<Route path="/Search" element={<Search books={books} />} />
 				<Route path="/Rankings" element={<SortingComponent books={books}/>} />
-				<Route path="/List" element={<List />} />
+				<Route path="/BookList" element={<BookList />} />
 			</Routes>
 		</section>
 	  </BrowserRouter>

@@ -10,9 +10,6 @@ const SortingComponent = (props) => {
       sortedList.sort((a, b) => a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1);
     } else if (option === 'reverseAlphabetically') {
       sortedList.sort((a, b) => a.title.toLowerCase() > b.title.toLowerCase() ? -1 : 1);
-    } 
-    else if (option === 'topRated') {
-      // No action needed, list is already in original order
     }
     setSelectedOption(option);
     setSortedBooks(sortedList); // Update local state
@@ -21,10 +18,9 @@ const SortingComponent = (props) => {
   return (
     <div>
       <select onChange={(e) => handleSort(e.target.value)} value={selectedOption}>
-        <option value="">Original Order</option>
+        <option value="">Top Rated</option>
         <option value="alphabetically">Alphabetically</option>
         <option value="reverseAlphabetically">Reverse Alphabetically</option>
-        <option value="topRated">Top Rated</option>
       </select>
       <ul>
         {sortedBooks && sortedBooks.map(item => (

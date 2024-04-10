@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-//import List from './List';
+import BookList from './BookList';
 
 const Search = (props) => {
     //Declare state variables to handle user input and the search results
@@ -35,11 +35,9 @@ const Search = (props) => {
         setResults(newResults);
     };
 
-    const handleAdd = (event) => {
-        setUserList([...userList, event])
-        for (let i=0; i < userList.length; i++){
-            console.log(userList[i])
-        }
+    const handleAddBook = (event) => {
+        //const newItem = { id: books.length + 1, title: 'New Book', rank: 0 };
+        setUserList(userList => [...userList, event]);
     }
 
     return (
@@ -56,10 +54,12 @@ const Search = (props) => {
             <ul>
                 {results.map((result, index) => (
                     <li key={index}>{result}
-                        <button onClick={handleAdd}>Add</button>
+                        <button onClick={handleAddBook}>Add</button>
                     </li>
                 ))}
             </ul>
+
+            <BookList userList={userList}/>
         </div>
     );
 }
