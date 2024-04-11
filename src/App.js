@@ -33,7 +33,7 @@ function App() {
 
 
   return (
-    <div className="container">
+    <div>
       <header>
 		<h1 id='websiteTitle'>BookStore</h1>
 		<img id='logo' src={img1} alt='Logo' width={75}></img>
@@ -47,14 +47,18 @@ function App() {
 			<Link to="BookList">BookList</Link> {" "}
 		</nav>
 		
-		<section>
-			<Routes>
-				<Route path="/" element={<Homepage books={books}/>} />
-				<Route path="/Search" element={<Search books={books} />} />
-				<Route path="/Rankings" element={<SortingComponent books={books}/>} />
-				<Route path="/BookList" element={<BookList />} />
-			</Routes>
-		</section>
+		<div id='container'>
+			<div className='box'></div>
+			<section id='routes-links'>
+				<Routes>
+					<Route path="/" element={<Homepage books={books}/>} />
+					<Route path="/Search" element={<Search books={books} />} />
+					<Route path="/Rankings" element={<SortingComponent books={books}/>} />
+					<Route path="/BookList" element={<BookList />} />
+				</Routes>
+			</section>
+			<div className='box'></div>
+		</div>
 	  </BrowserRouter>
 
 	  {/* 
