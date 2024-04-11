@@ -20,7 +20,7 @@ a:visited{
 }
 
 a:hover{
-  color: white;
+  color: #CB5CF2;
 }
 
 ul{
@@ -61,7 +61,7 @@ nav {
 
 /* Routes */
 #routes-links {
-  border-left: black solid 3px;
+  border-left: black solid 3x;
   border-right: black solid 3px;
   background-image: linear-gradient(to right, #3407A6, #2733D8, #3407A6);
   text-align: center;
