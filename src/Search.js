@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import BookList from './BookList';
+//import BookList from './BookList';
 
 const Search = (props) => {
     //Declare state variables to handle user input and the search results
     const [inputValue, setInputValue] = useState('');
     const [results, setResults] = useState([]);
-    const [userList, setUserList] = useState([]);
+    //const [userList, setUserList] = useState([]);
 
     //Create a list of all book titles and add them to a list
     let list = [];
@@ -26,19 +26,24 @@ const Search = (props) => {
 
         //Loop through every result to check if it is in list of books
         for (let i=0; i < list.length; i++){
-            if (list[i].toLowerCase().includes(inputValue)){
+            if (list[i].toLowerCase().includes(inputValue.toLowerCase())){
                 newResults.push(list[i]);
             }
         }
 
         //Make sure to save changes
-        setResults(newResults);
+        if (newResults.length === 0){
+            setResults(["No Entries available"]);
+        }
+        else {
+            setResults(newResults);
+        }
     };
 
-    const handleAddBook = (event) => {
+    /*const handleAddBook = (event) => {
         //const newItem = { id: books.length + 1, title: 'New Book', rank: 0 };
         setUserList(userList => [...userList, event]);
-    }
+    }*/
 
     return (
         <div>
@@ -53,13 +58,9 @@ const Search = (props) => {
 
             <ul>
                 {results.map((result, index) => (
-                    <li key={index}>{result}
-                        <button onClick={handleAddBook}>Add</button>
-                    </li>
+                    <li key={index}>{result}</li>
                 ))}
             </ul>
-
-            <BookList userList={userList}/>
         </div>
     );
 }

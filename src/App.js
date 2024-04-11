@@ -6,6 +6,8 @@ import Homepage from './Homepage';
 import Search from './Search';
 import BookList from './BookList';
 import SortingComponent from './Rankings';
+import img1 from './logo.png';
+
 
 function App() {
 
@@ -33,15 +35,16 @@ function App() {
   return (
     <div className="container">
       <header>
-		<h1>Header</h1>
+		<h1 id='websiteTitle'>BookStore</h1>
+		<img id='logo' src={img1} alt='Logo' width={75}></img>
       </header>
 
 	  <BrowserRouter>
-		<nav>
-			<Link to="/">Home</Link> | {" "}
-			<Link to="Search">Search</Link> | {" "}
-			<Link to="Rankings">Rankings</Link> | {" "}
-			<Link to="BookList">BookList</Link>
+		<nav className='navbar'>
+			<Link to="/">Home</Link> {" "}
+			<Link to="Search">Search</Link> {" "}
+			<Link to="Rankings">Rankings</Link> {" "}
+			<Link to="BookList">BookList</Link> {" "}
 		</nav>
 		
 		<section>
