@@ -20,12 +20,15 @@ function App() {
 		.then(response => {
 			if(response.ok) 
 				return response.json();
-
 				throw new Error("Failed to fetch API Call");
 			})
 			.then(data => {
-				setBooks(data.results.books);
-			})
+				setBooks(data.results.books.map(book => ({
+				  title: book.title,
+				  author: book.author,
+				  buy_links: book.buy_links || [] // Ensure buy_links is an array or set to empty array
+				})));
+			  })
 			.catch(error => {
 				console.log(error);
 			})

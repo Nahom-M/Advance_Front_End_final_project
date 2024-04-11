@@ -1,14 +1,28 @@
-const BookList = (props) =>{
-    return(
-        <div>
-            <h3>All Books</h3>
-            <ul>
-                {props.userList && props.userList.map(item => (
-                    <li key={item.id}>Title: {item.title}, Rank: {item.rank}</li>
-                ))}
-		    </ul>
-        </div>
-    );
-}
+// BookList.js
+
+import React from 'react';
+
+const BookList = ({ books }) => {
+  return (
+    <div>
+      <h2>Books</h2>
+      <ul>
+        {books.map(book => (
+          <li key={book.title}>
+            <h3>{book.title}</h3>
+            <p>Author: {book.author}</p>
+            <p>Purchase From: {book.buy_links && book.buy_links.length > 0 ? (
+              book.buy_links.map((link, index) => (
+                <a key={index} href={link.url}>{link.name}</a>
+              ))
+            ) : (
+              "Purchase links not available"
+            )}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default BookList;
