@@ -1,7 +1,6 @@
 /* Body/Everything */
 *{
   font-size: 20px;
-  color: white;
 }
 
 body{
@@ -61,6 +60,7 @@ nav {
 
 /* Routes */
 #routes-links {
+  color: white;
   border-left: black solid 3x;
   border-right: black solid 3px;
   background-image: linear-gradient(to right, #3407A6, #2733D8, #3407A6);
