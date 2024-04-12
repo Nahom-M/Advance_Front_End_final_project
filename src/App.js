@@ -6,8 +6,9 @@ import Homepage from './Homepage';
 import Search from './Search';
 import BookList from './BookList';
 import SortingComponent from './Rankings';
+import Contact from './Contact';
 import img1 from './logo.png';
-
+//Props, state lifting, composition, bootstraps
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
 			<Link to="Search">Search</Link> {" "}
 			<Link to="Rankings">Rankings</Link> {" "}
 			<Link to="BookList">BookList</Link> {" "}
+			<Link to="Contact">Contact</Link> {" "}
 		</nav>
 		
 		<div id='container'>
@@ -58,6 +60,7 @@ function App() {
 					<Route path="/Search" element={<Search books={books} />} />
 					<Route path="/Rankings" element={<SortingComponent books={books}/>} />
 					<Route path="/BookList" element={<BookList books={books}/>} />
+					<Route path="/Contact" element={<Contact method={method}/>} />
 				</Routes>
 			</section>
 			<div className='box'></div>
