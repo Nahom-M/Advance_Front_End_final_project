@@ -15,7 +15,7 @@ function App() {
 
 	useEffect(() => {
 		fetch("https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=lkA5enon02EGDcxWlr2SGKtvGYIg4COI")
-		//book reviewsas
+		//book reviews
 		//fetch("https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=lkA5enon02EGDcxWlr2SGKtvGYIg4COI")
 		.then(response => {
 			if(response.ok) 
@@ -25,6 +25,7 @@ function App() {
 			.then(data => {
 				setBooks(data.results.books.map(book => ({
 				  title: book.title,
+				  rank: book.rank,
 				  author: book.author,
 				  buy_links: book.buy_links || [] 
 				})));
