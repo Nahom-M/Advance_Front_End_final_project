@@ -26,7 +26,7 @@ function App() {
 				setBooks(data.results.books.map(book => ({
 				  title: book.title,
 				  author: book.author,
-				  buy_links: book.buy_links || [] // Ensure buy_links is an array or set to empty array
+				  buy_links: book.buy_links || [] 
 				})));
 			  })
 			.catch(error => {
