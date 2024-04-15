@@ -3,7 +3,7 @@ import './App.css';
 //useParams
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import HomepageContainer from './HomepageContainer';
-import Homepage from './Homepage';
+//import Homepage from './Homepage';
 import Search from './Search';
 import BookList from './BookList';
 import SortingComponent from './Rankings';
@@ -13,6 +13,7 @@ import img1 from './logo.png';
 
 function App() {
 
+	const [searchCounter, setSearchCounter] = useState(0);
 	const [books, setBooks] = useState([]);
 
 	useEffect(() => {
@@ -57,8 +58,8 @@ function App() {
 			<div className='box'></div>
 			<section id='routes-links'>
 				<Routes>
-					<Route path="/" element={<Homepage books={books}/>} />
-					<Route path="/Search" element={<Search books={books} />} />
+					<Route path="/" element={<HomepageContainer books={books}/>} />
+					<Route path="/Search" element={<Search books={books} searchCounter={searchCounter} setSearchCounter={setSearchCounter}/>} />
 					<Route path="/Rankings" element={<SortingComponent books={books}/>} />
 					<Route path="/BookList" element={<BookList books={books}/>} />
 					<Route path="/Contact" element={<Contact />} />

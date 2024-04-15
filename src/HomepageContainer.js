@@ -3,7 +3,7 @@ import Homepage from "./Homepage";
 const HomepageContainer = (props) => {
     return(
         <div>
-            <Homepage />
+            <Homepage books={props.books}/>
         </div>
     );
 }

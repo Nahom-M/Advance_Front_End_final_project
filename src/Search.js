@@ -5,6 +5,7 @@ const Search = (props) => {
     //Declare state variables to handle user input and the search results
     const [inputValue, setInputValue] = useState('');
     const [results, setResults] = useState([]);
+    const newResults = [];
     //const [userList, setUserList] = useState([]);
 
     //Create a list of all book titles and add them to a list
@@ -22,7 +23,8 @@ const Search = (props) => {
     const handleSubmit = (event) => {
         //Prevent page from reloading on submission
         event.preventDefault();
-        const newResults = [];
+        
+        props.setSearchCounter(0);
 
         //Loop through every result to check if it is in list of books
         for (let i=0; i < list.length; i++){
@@ -30,20 +32,18 @@ const Search = (props) => {
                 newResults.push(list[i]);
             }
         }
+        
+        props.setSearchCounter(newResults.length);
 
         //Make sure to save changes
         if (newResults.length === 0){
+            props.setSearchCounter(0);
             setResults(["No Entries available"]);
         }
         else {
             setResults(newResults);
         }
     };
-
-    /*const handleAddBook = (event) => {
-        //const newItem = { id: books.length + 1, title: 'New Book', rank: 0 };
-        setUserList(userList => [...userList, event]);
-    }*/
 
     return (
         <div>
@@ -57,6 +57,7 @@ const Search = (props) => {
             </form>
 
             <ul>
+                <h3>Total Results {props.searchCounter}</h3>
                 {results.map((result, index) => (
                     <li key={index}>{result}</li>
                 ))}
