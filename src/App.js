@@ -61,7 +61,7 @@ function App() {
 					<Route path="/Search" element={<Search books={books} />} />
 					<Route path="/Rankings" element={<SortingComponent books={books}/>} />
 					<Route path="/BookList" element={<BookList books={books}/>} />
-					<Route path="/Contact" element={<Contact method={method}/>} />
+					<Route path="/Contact" element={<Contact />} />
 				</Routes>
 			</section>
 			<div className='box'></div>
