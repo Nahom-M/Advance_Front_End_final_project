@@ -7,17 +7,17 @@ import Homepage from './Homepage';
 import Search from './Search';
 import BookList from './BookList';
 import SortingComponent from './Rankings';
+import Contact from './Contact';
 import img1 from './logo.png';
-
+//Props, state lifting, composition, bootstraps
 
 function App() {
 
 	const [books, setBooks] = useState([]);
 
 	useEffect(() => {
+		//Here we fetch from the New York Times API
 		fetch("https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=lkA5enon02EGDcxWlr2SGKtvGYIg4COI")
-		//book reviewsas
-		//fetch("https://api.nytimes.com/svc/books/v3/reviews.json?author=Stephen+King&api-key=lkA5enon02EGDcxWlr2SGKtvGYIg4COI")
 		.then(response => {
 			if(response.ok) 
 				return response.json();
@@ -26,8 +26,9 @@ function App() {
 			.then(data => {
 				setBooks(data.results.books.map(book => ({
 				  title: book.title,
+				  rank: book.rank,
 				  author: book.author,
-				  buy_links: book.buy_links || [] // Ensure buy_links is an array or set to empty array
+				  buy_links: book.buy_links || [] 
 				})));
 			  })
 			.catch(error => {
@@ -49,6 +50,7 @@ function App() {
 			<Link to="Search">Search</Link> {" "}
 			<Link to="Rankings">Rankings</Link> {" "}
 			<Link to="BookList">BookList</Link> {" "}
+			<Link to="Contact">Contact</Link> {" "}
 		</nav>
 		
 		<div id='container'>
@@ -59,6 +61,7 @@ function App() {
 					<Route path="/Search" element={<Search books={books} />} />
 					<Route path="/Rankings" element={<SortingComponent books={books}/>} />
 					<Route path="/BookList" element={<BookList books={books}/>} />
+					<Route path="/Contact" element={<Contact method={method}/>} />
 				</Routes>
 			</section>
 			<div className='box'></div>

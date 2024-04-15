@@ -14,7 +14,7 @@ const BookList = ({ books }) => {
             <p>Author: {book.author}</p>
             <p>Purchase From: {book.buy_links && book.buy_links.length > 0 ? (
               book.buy_links.map((link, index) => (
-                <a key={index} href={link.url}>{link.name}</a>
+                <a key={index} href={link.url}>{link.name} &nbsp; &nbsp;</a>
               ))
             ) : (
               "Purchase links not available"
