@@ -10,7 +10,5 @@ Sass (may use)
 npm install sass
 
 
-Prop Drilling - App -> HomepageContainer -> Homepage
-State lifting - App counter -> Search.js
 Composition - Contact
-Bootstraps - 
+Bootstraps - Somewhere
