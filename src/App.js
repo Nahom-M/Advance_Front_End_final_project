@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-//useParams
+
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import HomepageContainer from './HomepageContainer';
 //import Homepage from './Homepage';
@@ -10,7 +11,6 @@ import BookList from './BookList';
 import SortingComponent from './Rankings';
 import Contact from './Contact';
 import img1 from './logo.png';
-//Props, state lifting, composition, bootstraps
 
 function App() {
 
@@ -47,7 +47,7 @@ function App() {
       </header>
 
 	  <BrowserRouter>
-		<nav className='navbar'>
+		<nav id='navbar'>
 			<Link to="/">Home</Link> {" "}
 			<Link to="Search">Search</Link> {" "}
 			<Link to="Rankings">Rankings</Link> {" "}

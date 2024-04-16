@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 
 const Contact = ({ children }) => { 
     //contact component acccepts children as a prop. Thus allows you to pass elements as children 
@@ -17,7 +18,7 @@ const Contact = ({ children }) => {
             {messageSent && <p>Message sent successfully!</p>}
             <form onSubmit={handleSubmit}>
                 {children}
-                <button type="submit">Submit</button>
+                <Button type="submit" >Submit</Button>
             </form>
         </div>
     );
