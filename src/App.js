@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import HomepageContainer from './HomepageContainer';
 //import Homepage from './Homepage';
+import ContactInformation from './ContactInfomration';
 import Search from './Search';
 import BookList from './BookList';
 import SortingComponent from './Rankings';
@@ -62,20 +63,7 @@ function App() {
 					<Route path="/Search" element={<Search books={books} searchCounter={searchCounter} setSearchCounter={setSearchCounter}/>} />
 					<Route path="/Rankings" element={<SortingComponent books={books}/>} />
 					<Route path="/BookList" element={<BookList books={books}/>} />
-					<Route path="/Contact" element={<Contact>
-                         <h2>Contact Us</h2>
-                            <form>
-                                <label>Name:</label>
-                                <input type="text" name="name" placeholder='Name'/>
-                                <br></br><br></br>
-                                <label>Email:</label>
-                                <input type="email" name="email" placeholder='Email'/>  
-						        <br></br><br></br>
-                                 <label>Message:</label>
-                                <textarea name="message" placeholder='Enter your message'></textarea>
-                                <br></br><br></br>
-                            </form>
-                            </Contact>} />
+					<Route path="/Contact" element={<Contact> <ContactInformation /> </Contact>} />
 				</Routes>
 			</section>
 			<div className='box'></div>
