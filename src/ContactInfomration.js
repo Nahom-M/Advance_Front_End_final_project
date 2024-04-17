@@ -1,6 +1,7 @@
 import Form from 'react-bootstrap/Form';
 
 const ContactInformation = () =>{
+    //This component simply creates a form for contact.js
     return(
         <div>
             <h2>Contact Us</h2>

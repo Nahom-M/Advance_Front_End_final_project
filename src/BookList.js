@@ -3,7 +3,8 @@
 import React from 'react';
 
 const BookList = ({ books }) => {
-
+  /*This components maps through the list of books obtained from our api and displays the book tile, 
+  author name and purchase links for each books*/
   return (
     <div id='booklist'>
       <h2>Books</h2>

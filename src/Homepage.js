@@ -1,6 +1,6 @@
-//import React, { useState } from 'react';
 
 const Homepage = (props) =>{
+    //Displays each book title and their rank
     return(
         <div>
             <h3>All Books</h3>

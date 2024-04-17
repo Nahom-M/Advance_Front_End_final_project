@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 
 const SortingComponent = (props) => {
   const [selectedOption, setSelectedOption] = useState('');
-  const [sortedBooks, setSortedBooks] = useState([...props.books]); // Local state for sorted books
+  // Local state for sorted books
+  const [sortedBooks, setSortedBooks] = useState([...props.books]);
 
+  /*This function handles the sorting for the books, by default the list is in ranking
+  order so we just changed it for alphabetically and reversed alphabetically*/
   const handleSort = (option) => {
     let sortedList = [...props.books];
     if (option === 'alphabetically') {
@@ -12,9 +15,12 @@ const SortingComponent = (props) => {
       sortedList.sort((a, b) => a.title.toLowerCase() > b.title.toLowerCase() ? -1 : 1);
     }
     setSelectedOption(option);
-    setSortedBooks(sortedList); // Update local state
+    // Update local state
+    setSortedBooks(sortedList);
   };
 
+  /*Here we display a list of options for the user to choose how to view the books in and
+  then we map through the list to display them*/
   return (
     <div>
       <select onChange={(e) => handleSort(e.target.value)} value={selectedOption}>

@@ -9,6 +9,7 @@ const Contact = ({ children }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         setMessageSent(true);
+        //document.getElementById("from").style.display="none";
     };
 
     return (
@@ -17,7 +18,7 @@ const Contact = ({ children }) => {
         <div>
             {messageSent && <p>Message sent successfully!</p>}
             <form onSubmit={handleSubmit}>
-                {children}
+                <div id='form'>{children}</div>
                 <Button type="submit" >Submit</Button>
             </form>
         </div>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-//import BookList from './BookList';
 
 const Search = (props) => {
     //Declare state variables to handle user input and the search results
@@ -32,7 +31,7 @@ const Search = (props) => {
                 newResults.push(list[i]);
             }
         }
-        
+        //The counter state we modify in order to include state lifting
         props.setSearchCounter(newResults.length);
 
         //Make sure to save changes

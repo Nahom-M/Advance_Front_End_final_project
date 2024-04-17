@@ -13,7 +13,8 @@ import Contact from './Contact';
 import img1 from './logo.png';
 
 function App() {
-
+	//The state for seacrhCounter will be used for state lifting
+	//The books state is where we store the books api
 	const [searchCounter, setSearchCounter] = useState(0);
 	const [books, setBooks] = useState([]);
 
